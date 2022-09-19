@@ -1,0 +1,21 @@
+{
+  "grupo": "Youtubers",
+  "integrantes": 3,
+  "personas": [
+    {
+      "nombre": "Marcos Rivas",
+      "edad": 26,
+      "categoria": "Diseño Web"
+    },
+    {
+      "nombre": "Juan Perez",
+      "edad": 33,
+      "categoria": "Fotografia"
+    },
+    {
+      "nombre": "Omar Pozillos",
+      "edad": 29,
+      "categoria": "Idiomas"
+    }
+  ]
+}
