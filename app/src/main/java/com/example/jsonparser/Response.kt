@@ -6,5 +6,5 @@ import kotlin.collections.ArrayList
 class Response {
     var grupo = ""
     var integrantes = 0
-    var personas: LinkedList<Persona>? = null
+    var personas: ArrayList<Persona> = arrayListOf()
 }

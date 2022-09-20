@@ -3,6 +3,7 @@ package com.example.jsonparser
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import com.google.gson.Gson
 import java.io.File
@@ -34,16 +35,27 @@ class MainActivity : AppCompatActivity() {
     // Prueba PrintWriter
     fun main() {
         val companies = Company("Microsoft", 182268,
-            listOf("California", "Washington", "Virginia")
+            listOf("California", "San Jose", "Virginia")
         )
 
         val path = "microsoft.json"
         try {
             // Opción 1
-            val myFile = File(path)
+            val myFile = File(Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOCUMENTS),path)
             val gson = Gson()
-            val jsonString = gson.toJson(companies)
-            myFile.writeText(jsonString)
+            val persona = Persona()
+            persona.nombre = "Marcos"
+            persona.edad = 56
+            persona.categoria = "Juegos"
+            val response = Response()
+            response.grupo = "Uno"
+            response.integrantes = 66;
+            response.personas.add(persona)
+            val string:String = gson.toJson(response.personas)
+            Log.d("RESPUESTA", string)
+            val json:String = gson.toJson(response)
+//            val jsonString = gson.toJson(companies)
+            myFile.writeText(json)
 
             // Opción 2
 //            File(path).printWriter().use {
